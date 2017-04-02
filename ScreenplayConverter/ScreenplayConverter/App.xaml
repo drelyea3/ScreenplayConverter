@@ -1,0 +1,72 @@
+﻿<Application x:Class="ScreenplayConverter.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ScreenplayConverter"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <sys:Double x:Key="_minWidth">800</sys:Double>
+        <sys:Double x:Key="_actFontSize">20</sys:Double>
+        <sys:Double x:Key="_sceneFontSize">20</sys:Double>
+        <sys:Double x:Key="_characterFontSize">12</sys:Double>
+        <sys:Double x:Key="_dialogueSize">12</sys:Double>
+
+        <DataTemplate x:Key="ActTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="ACT" Width="40"/>
+                <TextBlock Grid.Column="1" TextAlignment="Center" FontWeight="Bold" FontSize="{StaticResource _actFontSize}" Text="{Binding Text}" MinWidth="{StaticResource _minWidth}"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="SceneTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="SCENE" Width="40"/>
+                <TextBlock Grid.Column="1" TextAlignment="Center" FontWeight="Bold" FontSize="{StaticResource _sceneFontSize}" Text="{Binding Text}" MinWidth="{StaticResource _minWidth}"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CharacterTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="CHAR" Width="40"/>
+                <TextBlock Grid.Column="1" TextAlignment="Center" FontWeight="Bold" FontSize="{StaticResource _characterFontSize}" Text="{Binding Text}" MinWidth="{StaticResource _minWidth}"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DialogueTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="DLG"/>
+                <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _dialogueSize}" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ParentheticalTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="PAREN" Width="40"/>
+                <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _dialogueSize}" FontStyle="Italic" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
+            </Grid>
+        </DataTemplate>
+
+    </Application.Resources>
+
+</Application>
