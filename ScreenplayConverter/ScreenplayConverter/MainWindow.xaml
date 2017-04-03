@@ -18,6 +18,8 @@
         <CommandBinding Command="ApplicationCommands.Save" Executed="OnSaveExecute" CanExecute="CanSaveExecute"/>
         <CommandBinding Command="ApplicationCommands.Close" Executed="OnCloseExecute"/>
 
+        <CommandBinding Command="ApplicationCommands.Delete" Executed="OnDeleteExecute"/>
+
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>

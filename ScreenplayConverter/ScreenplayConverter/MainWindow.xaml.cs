@@ -46,7 +46,7 @@ namespace ScreenplayConverter
                 Filter = "Word documents (*.docx)|*.docx|Text files (*.txt)|*.txt",
                 CheckFileExists = true,
                 CheckPathExists = true,
-                //FilterIndex=2,
+                FilterIndex=2,
             };
 
             var result = dialog.ShowDialog();
@@ -87,6 +87,11 @@ namespace ScreenplayConverter
             }
         }
 
+        private void OnDeleteExecute(object sender, ExecutedRoutedEventArgs e)
+        {
+            script.Delete((ScriptItem)e.Parameter);
+        }
+
         private bool LoseChanges()
         {
             if (script.HasChanges)
@@ -111,8 +116,11 @@ namespace ScreenplayConverter
 
             foreach (Word.Paragraph para in doc.Paragraphs)
             {
-                string text = para.Range.Text;
-                paragraphs.Add(text);
+                string text = para.Range.Text.Trim();
+                if (!string.IsNullOrWhiteSpace(text))
+                {
+                    paragraphs.Add(text);
+                }
             }
 
             app.Quit(SaveChanges: false);

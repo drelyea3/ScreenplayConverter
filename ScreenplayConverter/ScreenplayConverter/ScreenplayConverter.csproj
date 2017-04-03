@@ -57,9 +57,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LineEditControl.xaml.cs">
+      <DependentUpon>LineEditControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScriptItemFactory.cs" />
     <Compile Include="ScriptItemTemplateSelector.cs" />
     <Compile Include="ScriptModel.cs" />
+    <Page Include="LineEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

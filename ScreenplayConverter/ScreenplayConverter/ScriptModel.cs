@@ -61,6 +61,11 @@ namespace ScreenplayConverter
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
+        internal void Delete(ScriptItem item)
+        {
+            scriptItems.Remove(item);
+        }
     }
 
     public enum ScriptItemType
