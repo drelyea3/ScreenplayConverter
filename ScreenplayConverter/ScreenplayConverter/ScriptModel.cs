@@ -37,11 +37,6 @@ namespace ScreenplayConverter
         {
             Items.Clear();
 
-            //Items.Add(new ScriptItem() { ItemType = ScriptItemType.Act, Text = "ACT ONE" });
-            //Items.Add(new ScriptItem() { ItemType = ScriptItemType.Scene, Text = "SCENE 1" });
-            //Items.Add(new ScriptItem() { ItemType = ScriptItemType.Character, Text = "DAVID" });
-            //Items.Add(new ScriptItem() { ItemType = ScriptItemType.Dialogue, Text = "How's it goin', eh?" });
-
             foreach (string text in scriptText)
             {
                 var item = ScriptItemFactory.Create(text);

@@ -12,73 +12,75 @@
         <sys:Double x:Key="_characterFontSize">12</sys:Double>
         <sys:Double x:Key="_dialogueSize">12</sys:Double>
 
+        <local:ScriptItemTypeValueConverter x:Key="sitvc"/>
+        
         <ContextMenu x:Key="typeMenu">
             <MenuItem Header="ACT" IsCheckable="True" IsChecked="True"/>
             <MenuItem Header="SCENE"/>
         </ContextMenu>
 
         <DataTemplate x:Key="ActTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="Gray">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center" ItemType="{Binding ItemType, Mode=TwoWay}"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _actFontSize}" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="SceneTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="LightGray">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _sceneFontSize}" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="CharacterTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="AntiqueWhite">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center" ItemType="{Binding ItemType}"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _characterFontSize}" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="DialogueTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="Ivory">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center" ItemType="{Binding ItemType}"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _dialogueSize}" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="ParentheticalTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="AliceBlue">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center" ItemType="{Binding ItemType}"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _dialogueSize}" FontStyle="Italic" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="ActionTemplate">
-            <Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch" Background="BlanchedAlmond">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <local:LineEditControl/>
+                <local:LineEditControl VerticalAlignment="Center" ItemType="{Binding ItemType}"/>
                 <TextBlock Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource _dialogueSize}" FontStyle="Italic" Text="{Binding Text}" MaxWidth="{StaticResource _minWidth}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>

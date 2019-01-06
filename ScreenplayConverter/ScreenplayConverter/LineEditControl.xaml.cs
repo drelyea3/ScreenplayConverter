@@ -20,6 +20,16 @@ namespace ScreenplayConverter
     /// </summary>
     public partial class LineEditControl : UserControl
     {
+        public ScriptItemType ItemType
+        {
+            get { return (ScriptItemType)GetValue(ItemTypeProperty); }
+            set { SetValue(ItemTypeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ItemType.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemTypeProperty =
+            DependencyProperty.Register("ItemType", typeof(ScriptItemType), typeof(LineEditControl), new PropertyMetadata(ScriptItemType.Unknown));
+
         public LineEditControl()
         {
             InitializeComponent();

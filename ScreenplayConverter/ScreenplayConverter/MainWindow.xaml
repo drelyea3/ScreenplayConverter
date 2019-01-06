@@ -17,9 +17,7 @@
         <CommandBinding Command="ApplicationCommands.Open" Executed="OnOpenExecute" CanExecute="CanOpenExecute"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="OnSaveExecute" CanExecute="CanSaveExecute"/>
         <CommandBinding Command="ApplicationCommands.Close" Executed="OnCloseExecute"/>
-
         <CommandBinding Command="ApplicationCommands.Delete" Executed="OnDeleteExecute"/>
-
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,8 +33,15 @@
             </MenuItem>
         </Menu>
 
-        <ListBox Name="scriptItemsList" ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource itemTemplateSelector}" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-
+        <ListBox Name="scriptItemsList" ItemsSource="{Binding Items}" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,-1"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="ContentTemplate" Value="{Binding ItemType, Converter={StaticResource sitvc}, Mode=TwoWay}"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 </Window>
